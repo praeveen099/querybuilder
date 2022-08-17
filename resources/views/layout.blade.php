@@ -14,6 +14,8 @@
         <style>
             html {
                 scroll-behavior: smooth;
+                text-align: center;
+                background-color: #f2f2f2;
             }
             .clamp {
                 display: -webkit-box;
@@ -23,6 +25,19 @@
             .clamp.one-line {
                 -webkit-line-clamp: 1;
             }
+            form{
+                margin-top: 2rem;
+            }
+            input[type=submit] {
+                background-color: #4CAF50; /* Green */
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+        }
         </style>
     </head>
     <body>
