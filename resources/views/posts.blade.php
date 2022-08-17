@@ -7,13 +7,13 @@
         <tr>
             <th>Title</th>
             <th>Excerpt</th>
-            <th>Author ID</th>
+            <th>Author</th>
           </tr>
         @foreach ($posts as $post)
         <tr>
             <td>{{ $post->title }}</td>
             <td>{{ $post->excerpt }}</td>
-            <td>{{ $post->user_id }}</td>
+            <td>{{ $post->name }}</td>
         </tr>
 
 
@@ -30,7 +30,7 @@
         <label for="body">Body:</label>
         <input type="text" id="body" name="body" required><br>
         <label for="user_id">Author id:</label>
-        <input type="number" id="user_id" name="user_id" min="1" max="{{ $numberOfPosts }}" required><br>
+        <input type="number" id="user_id" name="user_id" min="1" max="{{ $numberOfAuthors }}" required><br>
         <input type="submit" value="Submit">
 
     </form>

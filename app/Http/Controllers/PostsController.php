@@ -11,11 +11,14 @@ class PostsController extends Controller
     public function index()
     {
 
-        $posts = DB::table('posts')->paginate(15);
+        $posts = DB::table('posts')
+        ->join('users', 'posts.user_id', '=', 'users.id')
+        ->select('posts.*', 'users.name')
+        ->paginate(15);
 
-        $numberOfPosts = DB::table('posts')->count();
+        $numberOfAuthors = DB::table('users')->count();
 
-        return view('posts', ['posts' => $posts, 'numberOfPosts' => $numberOfPosts]);
+        return view('posts', ['posts' => $posts, 'numberOfAuthors' => $numberOfAuthors]);
     }
 
     public function create()
