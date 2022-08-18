@@ -20,3 +20,5 @@ Route::get('/', function () {
 
 Route::get('/posts',  [PostsController::class, 'index']);
 Route::post('/posts',  [PostsController::class, 'create']);
+
+Route::delete('/posts/{post}', [PostsController::class, 'destroy']);

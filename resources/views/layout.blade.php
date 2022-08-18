@@ -37,7 +37,17 @@
                 text-decoration: none;
                 display: inline-block;
                 font-size: 16px;
-        }
+            }
+            .delete{
+                background-color: #d9390d; /* Red */
+                border: 5px solid black;;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+            }
         </style>
     </head>
     <body>

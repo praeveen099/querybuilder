@@ -42,4 +42,11 @@ class PostsController extends Controller
         return redirect('/posts');
 
     }
+
+    public function destroy($post)
+    {
+        $deleted = DB::table('posts')->where('id', '=', $post)->delete();
+
+        return redirect('/posts');
+    }
 }

@@ -14,6 +14,15 @@
             <td>{{ $post->title }}</td>
             <td>{{ $post->excerpt }}</td>
             <td>{{ $post->name }}</td>
+            <td>
+                <form method="POST" action="/posts/{{$post->id}}">
+                    @csrf
+                    @method('DELETE')
+
+                    <button class="delete">Delete</button>
+                </form>
+            </td>
+
         </tr>
 
 
