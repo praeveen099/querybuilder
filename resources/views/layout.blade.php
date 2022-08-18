@@ -48,6 +48,13 @@
                 display: inline-block;
                 font-size: 16px;
             }
+            table{
+                margin-left: auto;
+                margin-right: auto;
+            }
+            td{
+                border: 1px solid #ddd;
+            }
         </style>
     </head>
     <body>
