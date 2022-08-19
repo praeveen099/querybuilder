@@ -49,4 +49,38 @@ class PostsController extends Controller
 
         return redirect('/posts');
     }
+
+    public function updatePage($postID)
+    {
+        $post = DB::table('posts')
+        ->select('id', 'title', 'user_id', 'excerpt', 'body')
+        ->where('id', '=', $postID)
+        ->get();
+
+
+        return view('update', ['post' => $post[0]]);
+    }
+
+    public function update($postID)
+    {
+        $attributes = request()->validate([
+            'title' => 'required',
+            'excerpt' => 'required',
+            'body' => 'required',
+            'user_id' => 'required',
+        ]);
+
+        $affected = DB::table('posts')
+        ->where('id', '=', $postID)
+        ->update([
+            'title' => $attributes['title'],
+            'excerpt' => $attributes['excerpt'],
+            'body' => $attributes['body'],
+            'user_id' => $attributes['user_id'],
+            'updated_at' => date("Y-m-d H:i:s"),
+        ]);
+
+        return redirect('/posts');
+
+    }
 }

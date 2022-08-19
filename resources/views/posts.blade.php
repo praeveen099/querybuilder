@@ -22,7 +22,9 @@
                     <button class="delete">Delete</button>
                 </form>
             </td>
-
+            <td><a href="/posts/update/{{$post->id}}" style="background-color: #0dd962;border: 5px solid black;
+                color:white; padding: 15px 32px;text-align: center;text-decoration: none;
+                display: inline-block;font-size: 16px;">Update</a></td>
         </tr>
 
 
